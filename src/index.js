@@ -1,20 +1,20 @@
 // import moment from "moment";
 // import { getUsers } from './common/userAPI';
-// import './style.css';
-// import "./style.scss";
+import './style.css';
+import "./style.scss";
 
-// console.log("Hello webpack!");
+console.log("Hello webpack!");
 
-// const fancyFunc = () => {
-//     return [1, 2];
-// };
+const fancyFunc = () => {
+    return [1, 2];
+};
   
-// const [a, b] = fancyFunc();
+const [a, b] = fancyFunc();
 
 // getUsers().then(json => console.log(json));
 
 //dynamic import
-const getUserModule = ()=> import('./common/userAPI');
+const getUserModule = ()=> import(/* webpackChunkName: "UsersAPI" */ './common/userAPI');
 
 const btn = document.getElementById("btn");
 
