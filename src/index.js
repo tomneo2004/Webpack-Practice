@@ -1,5 +1,6 @@
 // import moment from "moment";
 // import { getUsers } from './common/userAPI';
+import Bar from './model/bar';
 import './style.css';
 import "./style.scss";
 
@@ -17,6 +18,7 @@ const [a, b] = fancyFunc();
 const getUserModule = ()=> import(/* webpackChunkName: "UsersAPI" */ './common/userAPI');
 
 const btn = document.getElementById("btn");
+const btnName = document.getElementById("btn-name");
 
 btn.addEventListener("click", () => {
     console.log('start loading...')
@@ -24,4 +26,9 @@ btn.addEventListener("click", () => {
         getUsers().then(json => console.log(json));
     });
 });
+
+btnName.addEventListener("click", ()=>{
+    let bar = new Bar();
+    bar.sayMyName();
+})
 
